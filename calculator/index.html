@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cozy Calculator</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <div class="page">
+
+    <div class="bg-cloud cloud1"></div>
+    <div class="bg-cloud cloud2"></div>
+    <div class="bg-cloud cloud3"></div>
+    <div class="bg-cloud cloud4"></div>
+    <div class="bg-cloud cloud6"></div>
+    <div class="bg-cloud cloud5"></div>
+    <div class="bg-cloud cloud7"></div>
+    <div class="bg-cloud cloud8"></div>
+
+    <img src="images/js-calc-bunny.png" class="bunny" alt="Cute hopping bunny">
+
+    <div class="app-layout">
+
+      <div class="calculator">
+        <h1>૮꒰˶ᵔ ᵕ ᵔ˶꒱ა</h1>
+        <h2>cozy calculator</h2>
+
+        <input type="text" id="display" disabled>
+
+        <div class="buttons">
+          <button onclick="press(1)">1</button>
+          <button onclick="press(2)">2</button>
+          <button onclick="press(3)">3</button>
+          <button class="operator" onclick="press('+')">+</button>
+
+          <button onclick="press(4)">4</button>
+          <button onclick="press(5)">5</button>
+          <button onclick="press(6)">6</button>
+          <button class="operator" onclick="press('-')">-</button>
+
+          <button onclick="press(7)">7</button>
+          <button onclick="press(8)">8</button>
+          <button onclick="press(9)">9</button>
+          <button class="operator" onclick="press('*')">*</button>
+
+          <button onclick="press(0)">0</button>
+          <button onclick="press('.')">.</button>
+          <button onclick="press('(')">(</button>
+          <button onclick="press(')')">)</button>
+
+          <button class="operator" onclick="press('/')">/</button>
+          <button class="clear" onclick="clearDisplay()">C</button>
+          <button onclick="backspace()">⌫</button>
+          <button class="equal" onclick="calculate()">=</button>
+        </div>
+      </div>
+
+      <div class="history-panel">
+        <h3>history</h3>
+        <button class="clear-history" onclick="clearHistory()">clear history</button>
+        <ul id="historyList"></ul>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

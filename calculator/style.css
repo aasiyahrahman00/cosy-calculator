@@ -1,0 +1,486 @@
+body {
+  font-family: 'Quicksand', sans-serif;
+  background-color: #9fb06f;
+  margin: 0;
+}
+
+.page {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.bunny {
+  position: absolute;
+  bottom: -15px;
+  left: -160px;
+  width: 140px;
+  z-index: 3;
+  pointer-events: none;
+  animation: bunnyHopAcross 22s linear infinite;
+}
+
+/* Bunny hopping animation */
+@keyframes bunnyHopAcross {
+  0% {
+    left: -180px;
+    bottom: -15px;
+    transform: scaleX(-1) rotate(2deg);
+  }
+
+  18% {
+    left: -180px;
+    bottom: -15px;
+    transform: scaleX(-1) rotate(2deg);
+  }
+
+  23% {
+    left: 5%;
+    bottom: 25px;
+    transform: scaleX(-1) rotate(-4deg);
+  }
+
+  28% {
+    left: 18%;
+    bottom: -15px;
+    transform: scaleX(-1) rotate(2deg);
+  }
+
+  33% {
+    left: 31%;
+    bottom: 25px;
+    transform: scaleX(-1) rotate(-4deg);
+  }
+
+  38% {
+    left: 44%;
+    bottom: -15px;
+    transform: scaleX(-1) rotate(2deg);
+  }
+
+  43% {
+    left: 57%;
+    bottom: 25px;
+    transform: scaleX(-1) rotate(-4deg);
+  }
+
+  48% {
+    left: 70%;
+    bottom: -15px;
+    transform: scaleX(-1) rotate(2deg);
+  }
+
+  53% {
+    left: 83%;
+    bottom: 25px;
+    transform: scaleX(-1) rotate(-4deg);
+  }
+
+  58% {
+    left: 110%;
+    bottom: -15px;
+    transform: scaleX(-1) rotate(2deg);
+  }
+
+  100% {
+    left: 110%;
+    bottom: -15px;
+    transform: scaleX(-1) rotate(2deg);
+  }
+}
+
+.app-layout {
+  display: flex;
+  gap: 42px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.calculator,
+.history-panel {
+  background: #eab27f;
+  padding: 28px;
+  border-radius: 34px;
+  box-shadow: 0 14px 35px rgba(88, 92, 45, 0.25);
+  border: 4px solid #8b6a45;
+}
+
+.calculator {
+  width: 330px;
+  text-align: center;
+}
+
+.history-panel {
+  width: 280px;
+  min-height: 380px;
+  text-align: center;
+  background: #f6f0df;
+  border-color: #d99aa0;
+}
+
+h1 {
+  font-size: 1.7rem;
+  color: #6e4d35;
+  font-weight: 600;
+  margin: 0;
+}
+
+h2 {
+  margin-top: 8px;
+  margin-bottom: 18px;
+  color: #6e4d35;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+h3 {
+  margin-top: 0;
+  color: #6e4d35;
+  font-size: 1.4rem;
+}
+
+#display {
+  width: 100%;
+  height: 58px;
+  font-size: 24px;
+  text-align: right;
+  margin-bottom: 18px;
+  padding: 8px 12px;
+  border-radius: 20px;
+  border: 3px solid #8b6a45;
+  background-color: #f9df8f;
+  color: #5f432f;
+  box-sizing: border-box;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 11px;
+}
+
+button {
+  height: 60px;
+  font-size: 20px;
+  border: 3px solid #8b6a45;
+  border-radius: 20px;
+  background-color: #f7d765;
+  cursor: pointer;
+  transition: transform 0.15s ease, background-color 0.15s ease;
+  color: #5f432f;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+}
+
+button:hover {
+  background-color: #f4c84a;
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: scale(0.97);
+}
+
+.operator {
+  background-color: #e78f63;
+}
+
+.operator:hover {
+  background-color: #dc7c51;
+}
+
+.equal {
+  background-color: #ffd447;
+  color: #5f432f;
+}
+
+.equal:hover {
+  background-color: #f5bf27;
+}
+
+.clear {
+  background-color: #e99aa0;
+  color: #5f432f;
+}
+
+.clear:hover {
+  background-color: #dc838b;
+}
+
+#historyList {
+  list-style: none;
+  padding: 0;
+  margin-top: 15px;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+#historyList li {
+  background: #f9df8f;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 18px;
+  color: #5f432f;
+  font-size: 0.95rem;
+  border: 2px solid #8b6a45;
+}
+
+.clear-history {
+  margin-top: 8px;
+  margin-bottom: 10px;
+  height: 40px;
+  font-size: 14px;
+  background-color: #e99aa0;
+  width: 135px;
+  border-radius: 18px;
+}
+
+.clear-history:hover {
+  background-color: #dc838b;
+}
+
+/* Background clouds */
+.bg-cloud {
+  position: absolute;
+  background: #d9e0b1;
+  border-radius: 100px;
+  opacity: 0.75;
+  z-index: 1;
+  animation: drift 4s ease-in-out infinite;
+}
+
+.bg-cloud::before,
+.bg-cloud::after {
+  content: "";
+  position: absolute;
+  background: #d9e0b1;
+  border-radius: 50%;
+}
+
+.cloud1 {
+  width: 220px;
+  height: 90px;
+  top: 120px;
+  left: 60px;
+  animation-delay: 0s;
+}
+
+.cloud1::before {
+  width: 90px;
+  height: 90px;
+  top: -35px;
+  left: 30px;
+}
+
+.cloud1::after {
+  width: 110px;
+  height: 110px;
+  top: -50px;
+  left: 90px;
+}
+
+.cloud2 {
+  width: 260px;
+  height: 100px;
+  top: 160px;
+  right: 60px;
+  animation-delay: 1s;
+}
+
+.cloud2::before {
+  width: 100px;
+  height: 100px;
+  top: -40px;
+  left: 40px;
+}
+
+.cloud2::after {
+  width: 120px;
+  height: 120px;
+  top: -55px;
+  left: 120px;
+}
+
+.cloud3 {
+  width: 240px;
+  height: 95px;
+  bottom: 160px;
+  left: 150px;
+  animation-delay: 2s;
+}
+
+.cloud3::before {
+  width: 95px;
+  height: 95px;
+  top: -40px;
+  left: 30px;
+}
+
+.cloud3::after {
+  width: 115px;
+  height: 115px;
+  top: -50px;
+  left: 105px;
+}
+
+.cloud4 {
+  width: 250px;
+  height: 100px;
+  bottom: 120px;
+  right: 80px;
+  animation-delay: 0.5s;
+}
+
+.cloud4::before {
+  width: 100px;
+  height: 100px;
+  top: -42px;
+  left: 28px;
+}
+
+.cloud4::after {
+  width: 120px;
+  height: 120px;
+  top: -54px;
+  left: 115px;
+}
+
+.cloud5 {
+  width: 180px;
+  height: 75px;
+  top: 320px;
+  left: 250px;
+  opacity: 0.65;
+  animation-delay: 1.5s;
+}
+
+.cloud5::before {
+  width: 75px;
+  height: 75px;
+  top: -28px;
+  left: 20px;
+}
+
+.cloud5::after {
+  width: 90px;
+  height: 90px;
+  top: -38px;
+  left: 75px;
+}
+
+.cloud6 {
+  width: 190px;
+  height: 78px;
+  top: 80px;
+  left: 36%;
+  opacity: 0.7;
+  animation-delay: 0.8s;
+  transform: scaleX(-1);
+}
+
+.cloud6::before {
+  width: 78px;
+  height: 78px;
+  top: -30px;
+  left: 22px;
+}
+
+.cloud6::after {
+  width: 95px;
+  height: 95px;
+  top: -42px;
+  left: 82px;
+}
+
+.cloud7 {
+  width: 170px;
+  height: 70px;
+  top: 105px;
+  right: 33%;
+  opacity: 0.65;
+  animation-delay: 1.8s;
+  transform: scaleX(-1);
+}
+
+.cloud7::before {
+  width: 70px;
+  height: 70px;
+  top: -26px;
+  left: 18px;
+}
+
+.cloud7::after {
+  width: 86px;
+  height: 86px;
+  top: -36px;
+  left: 72px;
+}
+
+.cloud8 {
+  width: 230px;
+  height: 92px;
+  bottom: 55px;
+  left: 42%;
+  opacity: 0.72;
+  animation-delay: 2.4s;
+}
+
+.cloud8::before {
+  width: 92px;
+  height: 92px;
+  top: -36px;
+  left: 30px;
+}
+
+.cloud8::after {
+  width: 110px;
+  height: 110px;
+  top: -48px;
+  left: 98px;
+}
+
+.cloud6,
+.cloud2,
+.cloud4,
+.cloud3 {
+  animation-name: driftFlipped;
+}
+
+/* Background clouds animation */
+@keyframes driftFlipped {
+  0% {
+    transform: scaleX(-1) translateY(0px);
+  }
+
+  50% {
+    transform: scaleX(-1) translateY(-18px);
+  }
+
+  100% {
+    transform: scaleX(-1) translateY(0px);
+  }
+}
+
+@media (max-width: 800px) {
+  .page {
+    padding: 25px;
+  }
+
+  .app-layout {
+    flex-direction: column;
+    gap: 25px;
+  }
+
+  .calculator,
+  .history-panel {
+    width: 90%;
+    max-width: 360px;
+  }
+}
