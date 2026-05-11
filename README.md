@@ -27,4 +27,4 @@ HTML5 · CSS3 · JavaScript · Git & GitHub · GitHub Pages
 
 ## Preview
 
-![Cozy Calculator Preview](calculator/preview/cozy-calculator-preview.png)
+![Cozy Calculator Preview](calculator/preview/cozy-calc-preview.png)
