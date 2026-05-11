@@ -23,8 +23,8 @@ HTML5 · CSS3 · JavaScript · Git & GitHub · GitHub Pages
 
 ## Live Demo
 
-[Live Demo]https://aasiyahrahman00.github.io/cosy-calculator/
+[Live Demo](https://aasiyahrahman00.github.io/cosy-calculator/)
 
 ## Preview
 
-![Cozy Calculator Preview](calculator/preview/cozy-calc-preview.png)
+![Cozy Calculator Preview](preview/cozy-calculator-preview.png)
